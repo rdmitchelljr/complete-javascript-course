@@ -44,4 +44,28 @@ const describePopulation = function (country, population) {
 console.log(describePopulation("Czechia", 10.7));
 
 //introduction to arrays
-let population = [10.7, 30, 3, 329];
+let population = [10.7, 329, 32, 6];
+console.log(population.length === 4);
+
+const percentages = [
+  percentageOfWorld2(population[0]),
+  percentageOfWorld2(population[1]),
+  percentageOfWorld2(population[2]),
+  percentageOfWorld2(population[population.length - 1]),
+];
+console.log(percentages);
+
+// Methods
+
+const usaNeighbours = ["Canada", "Mexico"];
+// welcome utopia
+usaNeighbours.push("Utopia");
+//farewell utopia
+usaNeighbours.pop();
+
+if (!usaNeighbours.includes("Germany")) {
+  console.log("Probably not a central European country :D");
+}
+
+usaNeighbours[usaNeighbours.indexOf("Mexico")] = "THE MOON";
+console.log(usaNeighbours);
