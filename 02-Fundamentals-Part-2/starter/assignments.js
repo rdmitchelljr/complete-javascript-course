@@ -69,3 +69,36 @@ if (!usaNeighbours.includes("Germany")) {
 
 usaNeighbours[usaNeighbours.indexOf("Mexico")] = "THE MOON";
 console.log(usaNeighbours);
+
+//Intro to objects
+
+const myCountry = {
+  country: "USA",
+  capital: "Washington DC",
+  language: "english",
+  population: 329,
+  neighbours: ["Canada", "Mexico"],
+  checkIsland: function () {
+    this.isIsland = this.neighbours.length > 0 ? false : true;
+    return this.isIsland;
+  },
+  describe: function () {
+    return (this.description = `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries, and a capital called ${this.capital}.`);
+  },
+};
+
+// //dot vs bracket
+// console.log(
+//   `${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries, and a capital called ${myCountry.capital}.`
+// );
+
+// //Increase population
+// myCountry.population += 2;
+// console.log(myCountry.population);
+
+// myCountry["population"] -= 2;
+// console.log(myCountry["population"]);
+
+myCountry.describe();
+myCountry.checkIsland();
+console.log(myCountry.description);

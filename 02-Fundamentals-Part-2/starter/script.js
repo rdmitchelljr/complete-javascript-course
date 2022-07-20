@@ -144,7 +144,7 @@ const ages = [
 ];
 
 console.table(ages);
-*/
+
 
 const friends = ["Michael", "Steven", "Peter"];
 
@@ -176,3 +176,85 @@ console.log(friends.includes(23));
 if (friends.includes("Steven")) {
   console.log("You have a friend called Steven.");
 }
+
+const jonasArray = [
+  "Jonas",
+  "Schmed",
+  2037 - 1991,
+  "teacher",
+  ["michael", "peter", "steven"],
+];
+
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmed",
+  age: 2022 - 1991,
+  job: "teacher",
+  friends: ["michael", "peter", "steven"],
+};
+
+console.log(jonas.lastName);
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(`${jonas["first" + nameKey] + " " + jonas["last" + nameKey]}`);
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+// console.log(jonas."last" + nameKey)
+
+// const interestedIn = prompt(
+//   "What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends"
+// );
+
+// if (jonas[interestedIn]) {
+//   console.log(jonas[interestedIn]);
+// } else {
+//   console.log("Wrong request");
+// }
+
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonasschmed";
+console.log(jonas);
+
+// Challenge
+// "Jonas has 3 friends, and his best friend is called Michael"
+
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
+);
+*/
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmed",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["michael", "peter", "steven"],
+  hasDriversLicense: true,
+  // calcAge: function (birthYear) {
+  //   return 2022 - birthYear;
+  // }
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2022 - this.birthYear;
+  // },
+  calcAge: function () {
+    return (this.age = 2022 - this.birthYear);
+  },
+  //prettier-ignore
+  // getSummary: function () {
+  //   this.summary = `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has
+  //   ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  //   return this.summary;
+  // },
+  getSummary: function () {
+    return this.summary = `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  },
+};
+jonas.calcAge();
+jonas.getSummary();
+
+console.log(jonas.summary);
